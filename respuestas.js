@@ -35,6 +35,45 @@ function circle(radius, color, x, y) {
   }
 }
 
+//Dibujando el escenario//
+var gap = 100,
+    numbPaths = 5,
+    Linecolor = 'white',
+    Thickness = 2,
+    numblines = numbPaths + 1,
+    centered = numblines % 2 != 0,
+    coef = null;
+
+//Para centrar las lineas en la pantalla//
+if(centered) {
+  coef = Math.floor(numblines/2);
+} else {
+  coef = numbPaths/2;
+};
+
+var LPositions = [],
+    BPositions = [];
+
+//Dibujamos las lineas del escenario//
+function Background() {
+  ctx.save();
+  ctx.strokeStyle = Linecolor;
+  ctx.lineWidth = Thickness;
+  for (i = 0; i < numblines; i++) {
+    LPositions.push(canvas_width/2 + (i-coef)*gap);
+    ctx.moveTo(LPositions[i],0);
+    ctx.lineTo(LPositions[i],canvas_height);
+    ctx.stroke();
+  };
+  ctx.restore();
+};
+
+//Posicion de las pelotas segun las lineas//
+for (i = 0; i < numbPaths; i++) {
+  BPositions.push(LPositions[i]+gap/2);
+};
+
+
 function updateGameArea() {
   var x, y;
   myGameArea.clear();
