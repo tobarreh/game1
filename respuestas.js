@@ -35,6 +35,7 @@ function circle(radius, color, x, y) {
   }
 }
 
+// Me como los mocos
 //Dibujando el escenario//
 var gap = 100,
     numbPaths = 5,
