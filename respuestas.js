@@ -5,7 +5,7 @@ var BallPositions = [20, 90, 230, 510];
 function startGame() {
   myGameArea.start();
 }
-
+//this is a comment that i added
 var myGameArea = {
   canvas : document.createElement("canvas"),
   start : function() {
