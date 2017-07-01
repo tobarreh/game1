@@ -21,6 +21,7 @@ var myGameArea = {
   },
 }
 
+// comentario innecesario
 function circle(radius, color, x, y) {
   this.radius = radius;
   this.x = x;
